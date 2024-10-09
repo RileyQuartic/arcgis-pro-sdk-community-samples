@@ -23,6 +23,7 @@ using System.Windows;
 using ArcGIS.Desktop.Framework;
 using ArcGIS.Desktop.Framework.Contracts;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace RibbonControls
 {
@@ -41,6 +42,7 @@ namespace RibbonControls
         return;
       _isInitialized = true;
 
+    
       //Add 6 items to the gallery
       for (int i = 0; i < 6; i++)
       {

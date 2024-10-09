@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!-- 
     Copyright 2019 Esri 
     
@@ -24,7 +23,7 @@
     <Image>Images\AddinDesktop32.png</Image>
     <Author>ArcGIS Pro SDK Team, arcgisprosdk@esri.com</Author>
     <Company>esri, https://www.esri.com</Company>
-    <Date>5/31/2017 1:27:19 PM, 2017</Date>
+    <Date>10/9/2024 9:10:19 AM, 2024</Date>
     <Subject>Framework</Subject>
     <!-- Note subject can be one or more of these topics:
                     Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
@@ -33,66 +32,110 @@
     <insertModule id="RibbonControls_Module" className="Module1" autoLoad="false" caption="Module1">
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
-        <tab id="RibbonControls_Tab1" caption="Sample Tab" keytip="X">
-          <group refID="RibbonControls_Group1" />
-          <group refID="RibbonControls_Group2" />
-          <group refID="RibbonControls_Group3" />
-          <group refID="RibbonControls_Group4" />
-        </tab>
+		  <tab id="RibbonControls_Tab1" caption="Subprecinct Management" keytip="X">
+			  <!--<group refID="RibbonControls_Group1" />-->
+			  <group refID="RibbonControls_Group2" />
+			  <group refID="RibbonControls_Group3" />
+			  <group refID="RibbonControls_Group4" />
+			  <group refID="RibbonControls_Group5" />
+			  <group refID="EditWithInspector_Group1"/>
+		  </tab>
       </tabs>
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="RibbonControls_Group1" caption="Group 1" keytip="X1">
+        <group id="RibbonControls_Group1" caption="Editing View" keytip="X1">
           <!-- host controls within groups -->
-          <toolbar refID="RibbonControls_Toolbar1" size="small" />
           <checkBox refID="RibbonControls_CheckBox1" size="small" />
-          <editBox refID="RibbonControls_EditBox1" size="small" />
+          <checkBox refID="RibbonControls_CheckBox2" size="small" />
+          <checkBox refID="RibbonControls_CheckBox3" size="small" />
+          <button refID="RibbonControls_UpdateValuesButton" size="large" />
         </group>
-        <group id="RibbonControls_Group2" caption="Group 2" keytip="X2" launcherButtonID="RibbonControls_Button3" launcherKeytip="XP">
+        <group id="RibbonControls_Group2" caption="Districts" keytip="X2">
           <!-- host controls within groups -->
           <!--Use subgroups to better control ribbon resizing-->
-          <subgroup refID="RibbonControls_Subgroup1" />
-          <toolPalette refID="RibbonControls_ToolPalette1" size="large" />
-          <buttonPalette refID="RibbonControls_ButtonPalette1" />
-          <splitButton refID="RibbonControls_SplitButton1" />
+          <subgroup refID="RibbonControls_Subgroup2" />
         </group>
-        <group id="RibbonControls_Group3" caption="Group 3" keytip="X3">
+        <group id="RibbonControls_Group3" caption="Symbology" keytip="X3">
           <!--host controls within groups-->
-          <toolbar refID="RibbonControls_Toolbar2" size="middle" />
-          <labelControl refID="RibbonControls_Label2" size="middle" />
-          <menu refID="RibbonControls_Menu1" size="middle" />
+		  <toolbar refID="RibbonControls_Toolbar1" size="small" />
         </group>
-        <group id="RibbonControls_Group4" caption="Group 4" keytip="X4">
-          <!-- host controls within groups -->
-          <gallery refID="RibbonControls_InlineGallery1" inline="true" size="large" />
-          <gallery refID="RibbonControls_Gallery1" inline="false" size="large" />
+        <group id="RibbonControls_Group4" caption="Modify" keytip="X4">
+          <subgroup refID="RibbonControls_Subgroup3" />
         </group>
+		<group id="EditWithInspector_Group1" caption="Update Attributes with Inspector" keytip="X5">
+	        <editBox refID="EditWithInspector_AttributeNameToUseEditBox" size="middle" />
+			<editBox refID="EditWithInspector_ModValueToSetEditBox" size="middle" />
+			<button refID="EditWithInspector_UpdateValuesButton" size="large" />
+		</group>
+		<group id="RibbonControls_Group5" caption="Editing Tools" keytip="X6">
+			  <!-- host controls within groups -->
+			<button refID ="esri_editing_ShowCreateFeaturesBtn"/>
+			<button refID ="esri_editing_ContinueFeature"/>
+			<button refID ="esri_editing_EditVerticesModifyFeature"/>
+			<button refID ="esri_editing_AlignFeaturesCommand"/>
+			<button refID ="esri_editing_ReshapeGeometry"/>
+			<button refID ="esri_editing_ExtendTrimFeatures"/>
+			<gallery id="RibbonControls_InlineGallery1"/>
+		</group>
       </groups>
       <subgroups>
         <subgroup id="RibbonControls_Subgroup1" verticalAlignment="Center" horizontalAlignment="Left" size="MediumThenSmallWhenSmall">
-          <button refID="RibbonControls_Button2" size="large" />
-          <tool refID="RibbonControls_MapTool1" size="large" />
+          <button refID="RibbonControls_Button1" size="large" />
+          <button refID="RibbonControls_Button6" size="large" />
+		  <button refID="RibbonControls_Button7" size="large" />
+        </subgroup>
+        <subgroup id="RibbonControls_Subgroup2" verticalAlignment="Center" horizontalAlignment="Left" size="MediumThenSmallWhenSmall">
+			<button refID="RibbonControls_Button2" size="large" />
+			<button refID="RibbonControls_Button3" size="large" />
+			<button refID ="esri_editing_EditVerticesMove"/>
+			
+        </subgroup>
+        <subgroup id="RibbonControls_Subgroup3" verticalAlignment="Center" horizontalAlignment="Left" size="MediumThenSmallWhenSmall">
+		  <button refID ="esri_editing_MergeFeatures" caption="Merge Eligible Subprecincts"/>
+          <button refID="RibbonControls_Button5" size="large" />
         </subgroup>
       </subgroups>
       <controls>
         <!-- add your controls here -->
-        <labelControl id="RibbonControls_Label1" caption="Class " hasTwoLines="false" />
+        <labelControl id="RibbonControls_Label1" caption="Display:" hasTwoLines="false" />
         <labelControl id="RibbonControls_Label2" caption="Another Label" hasTwoLines="false" />
         <comboBox id="RibbonControls_ComboBox1" caption="ComboBox 1" className="ComboBox1" keytip="XA" itemWidth="140" extendedCaption="Extended Caption" isEditable="false" isReadOnly="true" resizable="true">
           <tooltip heading="ComboBox1 Tooltip Heading">ComboBox1 Tooltip text<disabledText /></tooltip>
         </comboBox>
-        <button id="RibbonControls_Button1" caption="Button 1" className="Button1" keytip="XB" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Button1 Tooltip Heading">Button1 Tooltip text<disabledText /></tooltip>
+        <button id="RibbonControls_Button1" caption="Compare Subprecinct Districts" className="Button1" keytip="XB" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Compare Selected Subprecincts">Compare the district assignments of selected subprecincts in Editing View, Current View, or Future View.<disabledText /></tooltip>
         </button>
-        <button id="RibbonControls_Button2" caption="Button 2" className="Button2" keytip="XE" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Button2 Tooltip Heading">Button2 Tooltip text<disabledText /></tooltip>
+		<button id="RibbonControls_Button7" caption="Update Subprecinct Number" className="Button7" keytip="XY" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+		  <tooltip heading="Update Subprecinct Number in Street Segments">Click here to reflect subprecinct number changes in street segments feature class.<disabledText /></tooltip>
+		</button>
+        <button id="RibbonControls_Button2" caption="Validate Selected Subprecincts" className="Button2" keytip="XE" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png">
+          <tooltip heading="Verify Assigned Districts">Auto-verify that selected subprecincts have all the mandatory districts assigned, and only one of each major and mandatory district.<disabledText /></tooltip>
         </button>
-        <button id="RibbonControls_Button3" caption="Button 2" className="Button3" keytip="XQ" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
-          <tooltip heading="Button3 Tooltip Heading">Button3 Tooltip text<disabledText /></tooltip>
+        <button id="RibbonControls_Button3" caption="Validate Subprecinct Geometry" className="Button3" keytip="XQ" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png">
+          <tooltip heading="Verify Contiguity of Subprecincts">Auto-verify that selected subprecincts making up a precinct are contiguous.<disabledText /></tooltip>
         </button>
-        <checkBox id="RibbonControls_CheckBox1" keytip="XC" caption="CheckBox 1" className="CheckBox1" loadOnClick="false">
-          <tooltip heading="CheckBox1 Tooltip Heading">CheckBox1 Tooltip Heading.<disabledText></disabledText></tooltip>
+        <button id="RibbonControls_Button4" caption="Merge Candidates" className="Button4" keytip="XR" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Identify Subprecincts Eligible for Merging">Identify subprecinct merge candidates based on business rules.<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_Button5" caption="Voter Count Management" className="Button5" keytip="XS" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="View Voter Counts">View voter counts for selected subprecincts. Administrators can modify maximum and minimum number of voters for each precinct.<disabledText /></tooltip>
+        </button>
+        <button id="RibbonControls_Button6" caption="Change Districts" className="Button6" keytip="XT" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+          <tooltip heading="Assign/Remove Districts">Modify the assigned districts for the selected subprecincts.<disabledText /></tooltip>
+        </button>
+		<editBox id="EditWithInspector_ModValueToSetEditBox" caption="Enter value to set: " className="ModValueToSetEditBox" sizeString="AAAAAAAAAAAAAAAAA"></editBox>
+		<editBox id="EditWithInspector_AttributeNameToUseEditBox" caption="Enter attribute name to update:" className="AttributeNameToUseEditBox" sizeString="AAAAAAAAAAAAAAAAA"></editBox>
+		<button id="EditWithInspector_UpdateValuesButton" caption="Update Values" className="UpdateValuesButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+		</button>
+        <checkBox id="RibbonControls_CheckBox1" keytip="XC" caption="Current View" className="CheckBox1" loadOnClick="false">
+          <tooltip heading="Current Subprecinct View">Turn on the current subprecinct layer.<disabledText></disabledText></tooltip>
+        </checkBox>
+        <checkBox id="RibbonControls_CheckBox2" keytip="XD" caption="Future View" className="CheckBox2" loadOnClick="false">
+          <tooltip heading="Future Subprecinct View">Turn on the future subprecinct layer.<disabledText></disabledText></tooltip>
+        </checkBox>
+        <checkBox id="RibbonControls_CheckBox3" keytip="XE" caption="Editing View" className="CheckBox3" loadOnClick="false">
+          <tooltip heading="Editing Subprecinct View">Turn on editing mode to manage subprecincts.<disabledText></disabledText></tooltip>
         </checkBox>
         <editBox id="RibbonControls_EditBox1" caption="Edit Box1:" extendedCaption="Extended Caption." keytip="XD" className="EditBox1" disableIfBusy="false" sizeString="1234567890123456789012" condition="esri_mapping_mapPane">
           <tooltip heading="EditBox1 Tooltip Heading">EditBox1 Tooltip text.<disabledText></disabledText></tooltip>
@@ -134,7 +177,15 @@
         <button id="RibbonControls_SplitButton1_Items_Button3" caption="SplitButton1 3" className="SplitButton1_button3" keytip="XO" loadOnClick="true" smallImage="Images\GenericButtonBlack16.png" largeImage="Images\GenericButtonBlack32.png">
           <tooltip heading="Split Button 3">SplitButton1 3 ToolTip<disabledText /></tooltip>
         </button>
+        <button id="RibbonControls_UpdateValuesButton" caption="UpdateValuesButton" className="UpdateValuesButton" loadOnClick="true" smallImage="GenericButtonBlue16" largeImage="GenericButtonBlue32">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </button>
       </controls>
+	  <dockPanes>
+	    <dockPane id="DockpaneSimple_BookmarkDockpane" caption="My Bookmarks" className="BookmarkDockpaneViewModel" keytip="DockPane" initiallyVisible="true" dock="group" dockWith="esri_core_contentsDockPane">
+		  <content className="BookmarkDockpaneView" />
+	    </dockPane>
+	  </dockPanes>
       <palettes>
         <toolPalette id="RibbonControls_ToolPalette1" caption="ToolPalette1" showItemCaption="true" itemsInRow="1" keytip="XG">
           <tool refID="esri_mapping_selectByRectangleTool" />
@@ -152,7 +203,6 @@
           <group>
             <labelControl refID="RibbonControls_Label1" size="small" />
             <comboBox refID="RibbonControls_ComboBox1" size="small" />
-            <button refID="RibbonControls_Button1" size="small" />
           </group>
         </toolbar>
         <toolbar id="RibbonControls_Toolbar2">
@@ -166,8 +216,8 @@
         <gallery id="RibbonControls_Gallery1" caption="Gallery 1" className="Gallery1" itemsInRow="3" keytip="XX" dataTemplateFile="pack://application:,,,/RibbonControls;component//Gallery1Template.xaml" templateID="Gallery1ItemTemplate" resizable="true" largeImage="Images\GenericButtonOrange32.png">
           <tooltip heading="Gallery1 Tooltip Heading">Gallery1 Tooltip text<disabledText /></tooltip>
         </gallery>
-        <gallery id="RibbonControls_InlineGallery1" caption="InlineGallery 1" className="InlineGallery1" itemsInRow="5" keytip="XW" dataTemplateFile="pack://application:,,,/RibbonControls;component//InlineGallery1Template.xaml" templateID="InlineGallery1ItemTemplate" resizable="true" largeImage="Images\GenericButtonYellow32.png">
-          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        <gallery id="RibbonControls_InlineGallery1" caption="Inline Gallery" className="InlineGallery" itemsInRow="5" keytip="XW" dataTemplateFile="pack://application:,,,/RibbonControls;component//InlineGallery1Template.xaml" templateID="InlineGallery1ItemTemplate" resizable="true" largeImage="Images\GenericButtonYellow32.png">
+          <tooltip heading="Edit Tools">Access editing tools for subprecinct management.<disabledText /></tooltip>
         </gallery>
       </galleries>
       <menus>
@@ -187,5 +237,11 @@
         </splitButton>
       </splitButtons>
     </insertModule>
+	<insertModule id="EditInspector_Module" className="Module2" autoLoad="false" caption="Module2">
+		<editBox id="ModValuetoSetEditBox" caption="Enter value to set: " className="ModValuetoSetEditBox" sizeString="AAAAAAAAAAAAAAAAA"></editBox>
+		<editBox id="AttributeNametoEditBox" caption="Enter attribute name to update:" className="AttributeNametoEditBox" sizeString="AAAAAAAAAAAAAAAAA"></editBox>
+		<button id="UpdateValuesButton" caption="Update Values" className="UpdateValuesButton" loadOnClick="true" smallImage="Images\GenericButtonBlue16.png" largeImage="Images\GenericButtonBlue32.png">
+		</button>
+	</insertModule>
   </modules>
 </ArcGIS>

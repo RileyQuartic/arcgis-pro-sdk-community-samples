@@ -46,4 +46,32 @@ namespace RibbonControls
       ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Button3 clicked.");
     }
   }
+  internal class Button4 : Button
+  {
+    protected override void OnClick()
+    {
+      ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Button4 clicked.");
+    }
+  }
+  internal class Button5 : Button
+  {
+    protected override void OnClick()
+    {
+       ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Button5 clicked.");
+    }
+  }
+  internal class Button6 : Button
+  {
+    protected override void OnClick()
+    {
+       ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Button6 clicked.");
+    }
+  }
+  internal class Button7 : Button
+  {
+    protected override void OnClick()
+    {
+       ArcGIS.Desktop.Framework.Dialogs.MessageBox.Show("Button7 clicked.");
+    }
+  }
 }

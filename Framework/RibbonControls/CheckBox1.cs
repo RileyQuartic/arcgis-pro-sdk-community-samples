@@ -34,4 +34,30 @@ namespace RibbonControls
     }
 
   }
+  class CheckBox2 : ArcGIS.Desktop.Framework.Contracts.CheckBox
+  {
+    public CheckBox2()
+    {
+      IsChecked = true;
+    }
+
+    protected override void OnClick()
+    {
+       // TODO - add specific customization here as necessary
+    }
+
+  }
+  class CheckBox3 : ArcGIS.Desktop.Framework.Contracts.CheckBox
+  {
+    public CheckBox3()
+    {
+      IsChecked = true;
+    }
+
+    protected override void OnClick()
+    {
+       // TODO - add specific customization here as necessary
+    }
+
+  }
 }
